@@ -1,9 +1,21 @@
-import React from 'react'
+import { useGoogleLogin } from "@react-oauth/google";
+import React from "react";
 
 const HomePage = () => {
-  return (
-    <div>Hi im from microsite! :D</div>
-  )
-}
+  const login = useGoogleLogin({
+    onSuccess: (codeResponse) => console.log(codeResponse),
+    flow: "auth-code",
+  });
 
-export default HomePage
+  console.log("window.location.origin", window.location.origin);
+
+  return (
+    <div>
+      <div>Hi im from microsite! :D</div>
+      <button onClick={() => login()}>sign in with google</button>
+    </div>
+  ) 
+  
+};
+
+export default HomePage;
