@@ -1,12 +1,5 @@
 {
   "rewrites": [
-    {
-      "source": "/home/assets/:path*",
-      "destination": "/assets/:path*"
-    },
-    {
-      "source": "/home(/.*)?",
-      "destination": "/home/index.html"
-    }
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
